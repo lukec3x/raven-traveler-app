@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "934556866038",
+    "firebase_url": "https://raven-traveler.firebaseio.com",
+    "project_id": "raven-traveler",
+    "storage_bucket": "raven-traveler.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934556866038:android:e17e7fa95226220efb23d7",
+        "android_client_info": {
+          "package_name": "com.raventraveler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "934556866038-lrhaf0pgfgl3vc7ibr44n5mkpljcs7mq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhetBBdr2TTbwdVcefbjRdny1EPk2slN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "934556866038-lrhaf0pgfgl3vc7ibr44n5mkpljcs7mq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
