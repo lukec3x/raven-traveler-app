@@ -7,7 +7,7 @@ const { State: TextInputState } = TextInput;
 export default class KeyboardShift extends Component {
   state = {
     shift: new Animated.Value(0),
-    controller: 'false'
+    isOpen: 'false'
   };
 
   componentDidMount() {
@@ -25,7 +25,7 @@ export default class KeyboardShift extends Component {
     const { shift } = this.state;
     return (
       <Animated.View style={[styles.container, { transform: [{translateY: shift}] }]}>
-        {renderProp(this.state.controller)}
+        {renderProp(this.state.isOpen)}
       </Animated.View>
     );
   }
@@ -51,11 +51,11 @@ export default class KeyboardShift extends Component {
         }
       ).start();
     });
-    this.setState({ controller: 'true' })
+    this.setState({ isOpen: 'true' })
   }
 
   handleKeyboardDidHide = () => {
-    this.setState({ controller: 'false' })
+    this.setState({ isOpen: 'false' })
     Animated.timing(
       this.state.shift,
       {

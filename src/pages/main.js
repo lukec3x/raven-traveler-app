@@ -17,6 +17,7 @@ export default class Main extends Component {
             <TouchableOpacity onPress={ () => this.props.navigation.navigate('Receber1') }>
               <Image style={stl.imgs} source={require('../assets/ler.png')}/>
             </TouchableOpacity>
+            
           </View>
 
           <View style={stl.bottom}>

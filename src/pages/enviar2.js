@@ -34,7 +34,7 @@ export default class Enviar2 extends Component {
       if (this.state.enviado === false && this.state.pos === posFinal) {
         this.setState({ pos: 100 })
       } else if (this.state.enviado === true && this.state.pos === posFinal) {
-        // this.props.navigation.navigate('Home')
+        this.props.navigation.navigate('Home')
       }
     }, fps)
 
@@ -43,8 +43,6 @@ export default class Enviar2 extends Component {
   send = (code) => {
     //Nome da pasta no Banco de Dados
     const dbName = 'dados' //'inTest' //'dados'
-
-    // const { code } = this.state
 
     // if (this.props.navigation.state.params.text !== '' && code.length === 4) {
     if (true) {
@@ -94,9 +92,8 @@ export default class Enviar2 extends Component {
 
         </View>
 
-        {/* <Text>{this.state.pos}</Text> */}
         <Text style={ stl.txt2 }>{!enviado || 'Enviado com sucesso!'}</Text>
-        {/* <Text>{!error || error}</Text> */}
+        {/* <Text>{!error && error}</Text> */}
 
       </View>
     )

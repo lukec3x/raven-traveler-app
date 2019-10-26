@@ -8,7 +8,6 @@ export default class Enviar1 extends Component {
   state ={
     text: '',
     warning: '',
-    controller: true,
   }
   
   send = () => {
@@ -31,16 +30,15 @@ export default class Enviar1 extends Component {
         </View>
         
         <View style={stl.row2}>
-          <ImageBackground style={[stl.parchment, { alignItems: "flex-end", flexDirection: "column" }]} source={require('../assets/escrever.png')}>
+          <ImageBackground style={ stl.parchment } source={require('../assets/escrever.png')}>
 
             {isOpen === 'true'  && <TouchableOpacity style={{  }} onPress={() => this.send()}>
-              <Image style={{ width: 50, height: 50, marginBottom: 0, top: 20, right: 20 }} source={require('../assets/_btnEnviar2.png')} />
+              <Image style={ stl.btnEnvSmaller } source={require('../assets/_btnEnviar2.png')} />
             </TouchableOpacity>}
 
-            <TextInput style={ !(isOpen == 'true') ? [stl.input, { backgroundColor: null }] : [stl.input, { backgroundColor: null, maxHeight:205 }]} multiline value={this.state.text !== '' ? this.state.text : '' } numberOfLines={!(isOpen == 'true') ? 16 : 11} onChangeText={text => {
+            <TextInput style={ !(isOpen == 'true') ? stl.input : [stl.input, { maxHeight:205 }]} multiline value={this.state.text !== '' ? this.state.text : '' } numberOfLines={!(isOpen == 'true') ? 16 : 11} onChangeText={text => {
               this.setState({ text })
             }} />
-            {/* onFocus={this.handleInputFocus} onBlur={ this.handleInputBlur }/> */}
           </ImageBackground>
         </View>
 
@@ -49,8 +47,8 @@ export default class Enviar1 extends Component {
             <Image style={stl.btnImg} source={require('../assets/btnEnviar.png')} />
           </TouchableOpacity>
         </View>
-        <Text>{this.state.controller}</Text>
 
+        {/* Debug */}
         <Text>{this.state.warning}</Text>
 
       </View>
@@ -85,6 +83,8 @@ const stl = StyleSheet.create({
   parchment: {
     width: 330,
     height: 350,
+    alignItems: "flex-end",
+    flexDirection: "column",
   },
   input: {
     textAlignVertical: "top",
@@ -96,6 +96,13 @@ const stl = StyleSheet.create({
     marginTop: 20,
     width: 225,
     maxHeight: 287.5,
+  },
+  btnEnvSmaller: {
+    width: 50,
+    height: 50,
+    marginBottom: 0,
+    top: 20,
+    right: 20
   },
   row3: {
     alignItems: "center",

@@ -1,6 +1,6 @@
 import React, {Component } from 'react'
 
-import { View, StyleSheet, TouchableOpacity, TextInput, Image, Text, ImageBackground } from 'react-native'
+import { View, StyleSheet, TouchableOpacity, Image, Text, ImageBackground } from 'react-native'
 import { TextInputMask } from 'react-native-masked-text'
 
 import firebase from 'react-native-firebase'
@@ -92,13 +92,6 @@ export default class Enviar2 extends Component {
         <View style={stl.row3}>
           <Text style={stl.txt}>Informe seu código:</Text>
           <ImageBackground style={stl.fundoCod} source={require('../assets/fundoCod.png')}>
-            {/* <TextInput style={stl.txtCod}  onChangeText={txt => {
-              var text = ''
-              text += txt.replace(/\D/g, '')
-              if (text.length === 4)
-                this.setState({ code: `${text[0]}  ${text[1]}  ${text[2]}  ${text[3]}` })
-                this.verCod(text)
-            }}/> */}
             <TextInputMask
               type={'custom'}
               editable={!this.state.recebido}
@@ -143,19 +136,11 @@ export default class Enviar2 extends Component {
           </ImageBackground>
         </View>
 
-        {/* <Text>{this.state.pos}</Text> */}
-        {/* <Text>{!recebido || 'recebido'}</Text> */}
-        {/* <Text>{this.state.test}</Text> */}
-
         <Text style={{
           color: 'red', 
           fontFamily: 'IndieFlower',
           bottom: 110,
         }}>{!error || error}</Text>
-
-        {/* <Text>{!msg || msg}</Text> */}
-        {/* <Text>{code}</Text> */}
-        {/* <Text>{code}     {this.props.navigation.state.params.text}</Text> */}
 
       </View>
     )
