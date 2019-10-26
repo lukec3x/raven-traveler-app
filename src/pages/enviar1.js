@@ -29,21 +29,18 @@ export default class Enviar1 extends Component {
             <Image style={ stl.btnHome } source={require('../assets/home.png')}/>
           </TouchableOpacity>
         </View>
-
-        <View style={{ width: '100%', alignItems: "flex-end" }}>
-          {isOpen === 'true'  && <TouchableOpacity style={{  }} onPress={() => this.send()}>
-            {/* <Text>{this.state.warning}</Text> */}
-            {/* <Image style={{ width: 50, height: 50, marginBottom: 3 }} source={require('../assets/_btnEnviar2.png')} /> */}
-          </TouchableOpacity>}
-        </View>
-
+        
         <View style={stl.row2}>
-          <ImageBackground style={[stl.parchment, { alignItems: "flex-start", flexDirection: "row" }]} source={require('../assets/escrever.png')}>
-            <TextInput  style={[stl.input, { backgroundColor: '#fff' }]} multiline numberOfLines={16} onChangeText={text => {
+          <ImageBackground style={[stl.parchment, { alignItems: "flex-end", flexDirection: "column" }]} source={require('../assets/escrever.png')}>
+
+            {isOpen === 'true'  && <TouchableOpacity style={{  }} onPress={() => this.send()}>
+              <Image style={{ width: 50, height: 50, marginBottom: 0, top: 20, right: 20 }} source={require('../assets/_btnEnviar2.png')} />
+            </TouchableOpacity>}
+
+            <TextInput style={ !(isOpen == 'true') ? [stl.input, { backgroundColor: null }] : [stl.input, { backgroundColor: null, maxHeight:205 }]} multiline value={this.state.text !== '' ? this.state.text : '' } numberOfLines={!(isOpen == 'true') ? 16 : 11} onChangeText={text => {
               this.setState({ text })
             }} />
             {/* onFocus={this.handleInputFocus} onBlur={ this.handleInputBlur }/> */}
-            {isOpen === 'true' && <Image style={{ width: 50, height: 50, marginBottom: 0, top: 0, left: -10, }} source={require('../assets/_btnEnviar2.png')} />}
           </ImageBackground>
         </View>
 
@@ -93,8 +90,8 @@ const stl = StyleSheet.create({
     textAlignVertical: "top",
     // backgroundColor: '#fff',
     fontFamily: 'IndieFlower',
-    marginLeft: 73,
-    // marginLeft: 30,
+    // marginLeft: 73,
+    marginRight: 30,
     // marginTop: 20,
     marginTop: 20,
     width: 225,

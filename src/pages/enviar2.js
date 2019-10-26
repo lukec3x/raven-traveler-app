@@ -1,6 +1,6 @@
 import React, {Component } from 'react'
 
-import { View, StyleSheet, TouchableOpacity, Image, Text, ImageBackground } from 'react-native'
+import { View, StyleSheet, Clipboard, TouchableOpacity, Image, Text, ImageBackground } from 'react-native'
 
 import firebase from 'react-native-firebase'
 import timer from 'react-native-timer'
@@ -34,7 +34,7 @@ export default class Enviar2 extends Component {
       if (this.state.enviado === false && this.state.pos === posFinal) {
         this.setState({ pos: 100 })
       } else if (this.state.enviado === true && this.state.pos === posFinal) {
-        this.props.navigation.navigate('Home')
+        // this.props.navigation.navigate('Home')
       }
     }, fps)
 
@@ -79,7 +79,7 @@ export default class Enviar2 extends Component {
           <Image style={{ width: 90, height: 90, marginLeft: `${pos}%` }} source={require('../assets/ravenToLeft.gif')} />
         </View>
 
-        <View style={stl.row3}>
+        <View style={[stl.row3, { alignItems: "center" }]}>
           <Text style={stl.txt}>Seu código:</Text>
           <ImageBackground style={stl.fundoCod} source={require('../assets/fundoCod.png')}>
             <Text style={stl.txtCod}>{code[0]}</Text>
@@ -87,12 +87,16 @@ export default class Enviar2 extends Component {
             <Text style={stl.txtCod}>{code[2]}</Text>
             <Text style={stl.txtCod}>{code[3]}</Text>
           </ImageBackground>
+
+          <TouchableOpacity style={{ backgroundColor: null }} onPress={() => Clipboard.setString(code)}>
+            <Image style={{ width: 50, height: 50 }} source={require('../assets/_copy.png')} />
+          </TouchableOpacity>
+
         </View>
 
         {/* <Text>{this.state.pos}</Text> */}
         <Text style={ stl.txt2 }>{!enviado || 'Enviado com sucesso!'}</Text>
         {/* <Text>{!error || error}</Text> */}
-        {/* <Text>{code}     {this.props.navigation.state.params.text}</Text> */}
 
       </View>
     )
