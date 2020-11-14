@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-
 import { View, StyleSheet, TouchableOpacity, Image, Text, ImageBackground, TextInput } from 'react-native'
-
 import KeyboardShift from '../components/KeyboardShift'
 
 export default class Enviar1 extends Component {
@@ -32,7 +30,7 @@ export default class Enviar1 extends Component {
         <View style={stl.row2}>
           <ImageBackground style={ stl.parchment } source={require('../assets/escrever.png')}>
 
-            {isOpen === 'true'  && <TouchableOpacity style={{  }} onPress={() => this.send()}>
+            {isOpen === 'true' && <TouchableOpacity style={{  }} onPress={() => this.send()}>
               <Image style={ stl.btnEnvSmaller } source={require('../assets/_btnEnviar2.png')} />
             </TouchableOpacity>}
 
@@ -79,6 +77,7 @@ const stl = StyleSheet.create({
     marginLeft: 10,
     marginTop: 3,
     width: '100%',
+    justifyContent: "center",
   },
   parchment: {
     width: 330,
